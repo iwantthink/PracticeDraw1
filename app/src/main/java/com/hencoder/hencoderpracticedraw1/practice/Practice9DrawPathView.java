@@ -39,10 +39,16 @@ public class Practice9DrawPathView extends View {
         canvas.translate(600, 200);
         path = new Path();
         path.moveTo(0, 0);
-        path.addCircle(0, 0, 5, Path.Direction.CW);
-        path.addRect(0, -50, 100, 0, Path.Direction.CW);
+//        path.addCircle(0, 0, 5, Path.Direction.CW);
+//        path.addRect(0, -50, 100, 0, Path.Direction.CW);
         path.addArc(0, -50, 100, 50, 0, -225);
-        path.rLineTo(100, (float) (1 + Math.sqrt(2) * 50));
+        path.lineTo(100, (float) ((Math.sqrt(2) + 1) * 50));
+//        path.addCircle(100,(float) ((Math.sqrt(2) + 1) * 50),55, Path.Direction.CW);
+
+//        path.addRect(100, -50, 200, 0, Path.Direction.CW);
+        path.addArc(100, -50, 200, 50, 180, 225);
+        path.lineTo(100, (float) ((Math.sqrt(2) + 1) * 50));
+        mPaint.setStyle(Paint.Style.FILL);
         canvas.drawPath(path, mPaint);
         canvas.drawLine(100, -200, 100, 200, mPaint);
     }
